@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA6D71981F58D90700C34E33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71971F58D90700C34E33 /* AppDelegate.swift */; };
-		AA6D719A1F58D90700C34E33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71991F58D90700C34E33 /* ViewController.swift */; };
 		AA6D719D1F58D90700C34E33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6D719B1F58D90700C34E33 /* Main.storyboard */; };
 		AA6D71A01F58D90700C34E33 /* Loadster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA6D719E1F58D90700C34E33 /* Loadster.xcdatamodeld */; };
 		AA6D71A21F58D90700C34E33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6D71A11F58D90700C34E33 /* Assets.xcassets */; };
@@ -17,6 +16,10 @@
 		AA6D71BB1F58D90700C34E33 /* LoadsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71BA1F58D90700C34E33 /* LoadsterUITests.swift */; };
 		AA6D71CD1F58E9B900C34E33 /* Event+Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71CC1F58E9B900C34E33 /* Event+Convience.swift */; };
 		AA6D71CF1F58EB9200C34E33 /* Item+Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71CE1F58EB9200C34E33 /* Item+Convience.swift */; };
+		AA6D71D11F58EE1A00C34E33 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71D01F58EE1A00C34E33 /* EventController.swift */; };
+		AA6D71D31F58FAF300C34E33 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71D21F58FAF300C34E33 /* CreateEventViewController.swift */; };
+		AA6D71D51F58FC4B00C34E33 /* MainEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71D41F58FC4B00C34E33 /* MainEventTableViewController.swift */; };
+		AA6D71D91F59016400C34E33 /* CustomEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71D81F59016400C34E33 /* CustomEventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 /* Begin PBXFileReference section */
 		AA6D71941F58D90700C34E33 /* Loadster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loadster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6D71971F58D90700C34E33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA6D71991F58D90700C34E33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA6D719C1F58D90700C34E33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA6D719F1F58D90700C34E33 /* Loadster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Loadster.xcdatamodel; sourceTree = "<group>"; };
 		AA6D71A11F58D90700C34E33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +55,10 @@
 		AA6D71BC1F58D90700C34E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA6D71CC1F58E9B900C34E33 /* Event+Convience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+Convience.swift"; sourceTree = "<group>"; };
 		AA6D71CE1F58EB9200C34E33 /* Item+Convience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+Convience.swift"; sourceTree = "<group>"; };
+		AA6D71D01F58EE1A00C34E33 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		AA6D71D21F58FAF300C34E33 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		AA6D71D41F58FC4B00C34E33 /* MainEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEventTableViewController.swift; sourceTree = "<group>"; };
+		AA6D71D81F59016400C34E33 /* CustomEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomEventTableViewCell.swift; path = ../CustomEventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +109,18 @@
 		AA6D71961F58D90700C34E33 /* Loadster */ = {
 			isa = PBXGroup;
 			children = (
+				AA6D71D81F59016400C34E33 /* CustomEventTableViewCell.swift */,
 				AA6D71971F58D90700C34E33 /* AppDelegate.swift */,
-				AA6D71991F58D90700C34E33 /* ViewController.swift */,
+				AA6D71D01F58EE1A00C34E33 /* EventController.swift */,
 				AA6D719B1F58D90700C34E33 /* Main.storyboard */,
-				AA6D71A11F58D90700C34E33 /* Assets.xcassets */,
+				AA6D71D41F58FC4B00C34E33 /* MainEventTableViewController.swift */,
+				AA6D71D21F58FAF300C34E33 /* CreateEventViewController.swift */,
 				AA6D71A31F58D90700C34E33 /* LaunchScreen.storyboard */,
 				AA6D71A61F58D90700C34E33 /* Info.plist */,
-				AA6D719E1F58D90700C34E33 /* Loadster.xcdatamodeld */,
 				AA6D71CC1F58E9B900C34E33 /* Event+Convience.swift */,
 				AA6D71CE1F58EB9200C34E33 /* Item+Convience.swift */,
+				AA6D719E1F58D90700C34E33 /* Loadster.xcdatamodeld */,
+				AA6D71A11F58D90700C34E33 /* Assets.xcassets */,
 			);
 			path = Loadster;
 			sourceTree = "<group>";
@@ -271,11 +280,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA6D719A1F58D90700C34E33 /* ViewController.swift in Sources */,
 				AA6D71981F58D90700C34E33 /* AppDelegate.swift in Sources */,
+				AA6D71D91F59016400C34E33 /* CustomEventTableViewCell.swift in Sources */,
+				AA6D71D11F58EE1A00C34E33 /* EventController.swift in Sources */,
+				AA6D71D31F58FAF300C34E33 /* CreateEventViewController.swift in Sources */,
 				AA6D71CF1F58EB9200C34E33 /* Item+Convience.swift in Sources */,
 				AA6D71A01F58D90700C34E33 /* Loadster.xcdatamodeld in Sources */,
 				AA6D71CD1F58E9B900C34E33 /* Event+Convience.swift in Sources */,
+				AA6D71D51F58FC4B00C34E33 /* MainEventTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

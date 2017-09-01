@@ -12,16 +12,16 @@
         <!--MainEventPage-->
         <scene sceneID="ejR-1J-S0V">
             <objects>
-                <tableViewController id="1v9-2x-9Vn" userLabel="MainEventPage" sceneMemberID="viewController">
+                <tableViewController id="1v9-2x-9Vn" userLabel="MainEventPage" customClass="MainEventTableViewController" customModule="Loadster" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" id="HBK-GU-v9e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="Yks-51-w37">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="Yks-51-w37" customClass="CustomEventTableViewCell" customModule="Loadster" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="116"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yks-51-w37" id="ZRZ-nk-ehm">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yks-51-w37" id="ZRZ-nk-ehm" customClass="customEventCell" customModule="Loadster" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -63,6 +63,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="eventNameLabel" destination="2ay-Vg-rGE" id="27i-Fd-K6M"/>
                                     <segue destination="s1F-ZL-0yF" kind="show" id="FGT-8P-Sk2"/>
                                 </connections>
                             </tableViewCell>
@@ -84,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="911.20000000000005" y="152.47376311844079"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Event View Controller-->
         <scene sceneID="ydL-0L-HDV">
             <objects>
-                <viewController id="SCI-xG-Gll" sceneMemberID="viewController">
+                <viewController id="SCI-xG-Gll" customClass="CreateEventViewController" customModule="Loadster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FTc-X7-TFf"/>
                         <viewControllerLayoutGuide type="bottom" id="KKa-ZG-Fl1"/>
@@ -173,6 +174,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2cr-kX-I0b">
                                 <rect key="frame" x="110" y="421" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="prioritySwitchTapped:" destination="SCI-xG-Gll" eventType="valueChanged" id="LiV-4c-dmS"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gL-wq-mr2">
                                 <rect key="frame" x="103" y="503" width="169" height="50"/>
@@ -181,14 +185,25 @@
                                 <state key="normal" title="Create New Show ">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="createShowButtonTapped:" destination="SCI-xG-Gll" eventType="touchUpInside" id="Gv7-bb-Zb2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="PrioritySwitch" destination="2cr-kX-I0b" id="wOd-1B-LCX"/>
+                        <outlet property="eventDateField" destination="pbM-6Z-zl1" id="q3B-Yb-bSJ"/>
+                        <outlet property="eventInstallDate" destination="pTv-UP-emy" id="5Np-7x-a7T"/>
+                        <outlet property="eventLocationField" destination="ldZ-ud-pDW" id="ryl-WT-mhU"/>
+                        <outlet property="locationField" destination="ldZ-ud-pDW" id="MRG-fj-2Vw"/>
+                        <outlet property="nameOfShowField" destination="4dh-PN-EBM" id="U92-wp-UCz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdc-RV-TsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909.5999999999999" y="-405.24737631184411"/>
+            <point key="canvasLocation" x="1487" y="-370"/>
         </scene>
         <!--EventDetailPageView-->
         <scene sceneID="Tcq-Q3-0W7">
@@ -259,7 +274,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8V-hJ-LhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989.5999999999999" y="308.9955022488756"/>
+            <point key="canvasLocation" x="1487" y="379"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ted-mY-lMz">
@@ -332,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="782-Iv-6Zt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929" y="309"/>
+            <point key="canvasLocation" x="2039" y="75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jxU-87-zBS">
