@@ -15,6 +15,8 @@
 		AA6D71A51F58D90700C34E33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6D71A31F58D90700C34E33 /* LaunchScreen.storyboard */; };
 		AA6D71B01F58D90700C34E33 /* LoadsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71AF1F58D90700C34E33 /* LoadsterTests.swift */; };
 		AA6D71BB1F58D90700C34E33 /* LoadsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71BA1F58D90700C34E33 /* LoadsterUITests.swift */; };
+		AA6D71CD1F58E9B900C34E33 /* Event+Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71CC1F58E9B900C34E33 /* Event+Convience.swift */; };
+		AA6D71CF1F58EB9200C34E33 /* Item+Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71CE1F58EB9200C34E33 /* Item+Convience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		AA6D71B61F58D90700C34E33 /* LoadsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoadsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6D71BA1F58D90700C34E33 /* LoadsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadsterUITests.swift; sourceTree = "<group>"; };
 		AA6D71BC1F58D90700C34E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA6D71CC1F58E9B900C34E33 /* Event+Convience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+Convience.swift"; sourceTree = "<group>"; };
+		AA6D71CE1F58EB9200C34E33 /* Item+Convience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+Convience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				AA6D71A31F58D90700C34E33 /* LaunchScreen.storyboard */,
 				AA6D71A61F58D90700C34E33 /* Info.plist */,
 				AA6D719E1F58D90700C34E33 /* Loadster.xcdatamodeld */,
+				AA6D71CC1F58E9B900C34E33 /* Event+Convience.swift */,
+				AA6D71CE1F58EB9200C34E33 /* Item+Convience.swift */,
 			);
 			path = Loadster;
 			sourceTree = "<group>";
@@ -267,7 +273,9 @@
 			files = (
 				AA6D719A1F58D90700C34E33 /* ViewController.swift in Sources */,
 				AA6D71981F58D90700C34E33 /* AppDelegate.swift in Sources */,
+				AA6D71CF1F58EB9200C34E33 /* Item+Convience.swift in Sources */,
 				AA6D71A01F58D90700C34E33 /* Loadster.xcdatamodeld in Sources */,
+				AA6D71CD1F58E9B900C34E33 /* Event+Convience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
