@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-class eventController {
+class EventController {
     
-    static let sharedInstance = eventController()
+    static let SharedInstance = EventController()
     private let container: NSPersistentContainer
     
     
@@ -30,7 +30,7 @@ class eventController {
         
     }
     private init() {
-        container = NSPersistentContainer(name: "Model")
+        container = NSPersistentContainer(name: "Loadster")
         container.loadPersistentStores { (descprition: NSPersistentStoreDescription, error: Error?) in if let error = error {
             NSLog("error loading persisten stores: \(error)")
             }
@@ -39,15 +39,17 @@ class eventController {
     
    //Mark: - CRUD
     
-    func createEvent(nameOfEvent: String, location: String, installDate: Date, openDate: Date, priority: Bool) -> Event {
-        let event = Event(nameOfEvent: nameOfEvent, location: location, installDate: installDate, openDate: openDate, priority: priority, in: container.viewContext)
+    func createEvent(nameOfEvent: String, location: String, installDate: Date, dateOfEvent: Date, priority: Bool) -> Event {
+        let event = Event(nameOfEvent: nameOfEvent, location: location, installDate: installDate, dateOfEvent: dateOfEvent, priority: priority, in: container.viewContext)
         save()
         return event
     }
+    
     func deleteEvent(event: Event)   {
         container.viewContext.delete(event)
         save()
     }
+    
     func save() {
         do {
             try container.viewContext.save()

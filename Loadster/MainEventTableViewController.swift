@@ -10,16 +10,23 @@ import UIKit
 
 
 
-class MainEventTableViewController: UITableViewController {
+class MainEventTableViewController: UITableViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        
     }
     
 
@@ -30,26 +37,33 @@ class MainEventTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return EventController.SharedInstance.events.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! CustomEventTableViewCell
 
         // Configure the cell...
+        // call the updateViews function on your cell
+        let event = EventController.SharedInstance.events[indexPath.row]
+        cell.event = event
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let event = EventController.SharedInstance.events[indexPath.row]
+            EventController.SharedInstance.deleteEvent(event: event)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+    
+
+}
+
 
     /*
     // Override to support conditional editing of the table view.

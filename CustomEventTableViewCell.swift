@@ -10,17 +10,47 @@ import UIKit
 
 class CustomEventTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-       
+    @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var showOpensLabel: UILabel!
+    @IBOutlet weak var installDateLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var priorityLabel: UILabel!
+
+    //Mark: - Properties 
+    
+    var event: Event? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    //Set the labels
+
+    func updateViews() {
         
-        // Initialization code
+        guard let event = event,
+            let date = event.dateOfEvent,
+            let install = event.installDate,
+            let location = event.location    else { return }
+        
+        eventNameLabel.text = event.nameOfEvent
+        showOpensLabel.text = "Start Date: \(dateFormatter(date: date))"
+        installDateLabel.text = "Install Date: \(dateFormatter(date: install))"
+        locationLabel.text = "Location: \(location)"
+        priorityLabel.isHidden = event.priority == false
+        
+        
+        
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    
+    
+    func dateFormatter(date: NSDate) -> String {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter.string(from: date as Date)
     }
-
+    
 }

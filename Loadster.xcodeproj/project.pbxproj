@@ -540,6 +540,7 @@
 				AA6D71C11F58D90700C34E33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA6D71C21F58D90700C34E33 /* Build configuration list for PBXNativeTarget "LoadsterTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +549,7 @@
 				AA6D71C41F58D90700C34E33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA6D71C51F58D90700C34E33 /* Build configuration list for PBXNativeTarget "LoadsterUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +558,7 @@
 				AA6D71C71F58D90700C34E33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

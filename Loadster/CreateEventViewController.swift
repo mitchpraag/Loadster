@@ -8,42 +8,60 @@
 
 import UIKit
 
-class CreateEventViewController: UIViewController {
-
+class CreateEventViewController: UIViewController, UITextFieldDelegate {
+    
+    var event: Event?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameOfShowField.delegate = self
+        eventLocationField.delegate = self 
 
-        // Do any additional setup after loading the view.
     }
     
   
     @IBOutlet weak var nameOfShowField: UITextField!
     @IBOutlet weak var eventLocationField: UITextField!
-    @IBOutlet weak var eventDateField: UITextField!
-    @IBOutlet weak var eventInstallDate: UITextField!
     @IBOutlet weak var PrioritySwitch: UISwitch!
+    @IBOutlet weak var eventDate: UIDatePicker!
+    @IBOutlet weak var installDate: UIDatePicker!
     
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        textField.resignFirstResponder()
+        return true
+    }
     
     @IBAction func prioritySwitchTapped(_ sender: Any) {
+        
     }
+    
     @IBAction func createShowButtonTapped(_ sender: Any) {
+        
+        let eventTime = eventDate.date
+        let eventInstall = installDate.date
+        let priority = PrioritySwitch.isOn
+
+        
+        guard let nameOfshow: String = nameOfShowField.text, let eventLocation = eventLocationField.text else { return }
+        
+        let event = EventController.SharedInstance.createEvent(nameOfEvent: nameOfshow, location: eventLocation, installDate: eventInstall, dateOfEvent: eventTime, priority: priority)
+        
+        self.event = event
+        
+        self.navigationController?.popViewController(animated: true)
+        
     }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
