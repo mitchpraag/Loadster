@@ -34,9 +34,9 @@ class EventController {
         container.loadPersistentStores { (descprition: NSPersistentStoreDescription, error: Error?) in if let error = error {
             NSLog("error loading persisten stores: \(error)")
             }
+        
         }
-    }
-    
+        }
    //Mark: - CRUD
     
     func createEvent(nameOfEvent: String, location: String, installDate: Date, dateOfEvent: Date, priority: Bool) -> Event {
@@ -50,6 +50,11 @@ class EventController {
         save()
     }
     
+    
+    func add(item: Item, toEvent event: Event) {
+        
+    }
+    
     func save() {
         do {
             try container.viewContext.save()
@@ -58,15 +63,14 @@ class EventController {
         }
     }
     
-    func createItem(nameOfItem: String, quanity: Int64, loaded: Bool = false, installed: Bool = false, returned: Bool = false) -> Item {
-        let item = Item(nameOfItem: nameOfItem, quanity: quanity, in: container.viewContext)
+    func createItem(nameOfItem: String, quanity: String, loaded: Bool = false, installed: Bool = false, returned: Bool = false, event: Event) -> Item {
+        let item = Item(nameOfItem: nameOfItem, quanity: quanity, loaded: loaded, event: event, in: container.viewContext)
         save()
         return item
     }
+    
     func deleteItem(item: Item) {
         container.viewContext.delete(item)
         save()
+        }
     }
-    
-    
-}

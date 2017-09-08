@@ -18,6 +18,7 @@ extension Event {
         self.location = location
         self.installDate = installDate as NSDate
         self.dateOfEvent = dateOfEvent as NSDate
-        self.priority = priority as NSNumber //why does this need to be a NS NUMBER and how do I use it
+        self.priority = priority as NSNumber
+        
     }
 }

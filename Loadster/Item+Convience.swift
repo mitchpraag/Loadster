@@ -12,7 +12,7 @@ import CoreData
 
 
 extension Item {
-    convenience init(nameOfItem: String, quanity: Int64, loaded: Bool = false, installed: Bool = false, returned: Bool = false, in context:NSManagedObjectContext) {
+    convenience init(nameOfItem: String, quanity: String, loaded: Bool = false, installed: Bool = false, returned: Bool = false, event: Event, in context:NSManagedObjectContext) {
         self.init(context:context)
         
         self.nameOfItem = nameOfItem
@@ -20,5 +20,6 @@ extension Item {
         self.loaded = loaded
         self.installed = installed
         self.returned = returned
+        self.event = event
     }
 }
