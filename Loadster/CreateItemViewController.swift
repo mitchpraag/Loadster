@@ -9,12 +9,12 @@
 import UIKit
 
 class CreateItemViewController: UIViewController, UITextFieldDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        itemNameField.delegate
-//        quanityField.delegate
-
+        itemNameField.delegate = self
+        quanityField.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     var event: Event?
@@ -22,6 +22,12 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var itemNameField: UITextField!
     @IBOutlet weak var quanityField: UITextField!
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     @IBAction func addItemButtonTapped(_ sender: Any) {
