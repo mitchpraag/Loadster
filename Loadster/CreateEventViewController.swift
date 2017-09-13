@@ -15,18 +15,22 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameOfShowField.delegate = self
-        eventLocationField.delegate = self 
-
+        eventLocationField.delegate = self
+        showDateField.inputView = eventDate
+        installDateField.inputView = installDate
     }
-    
-  
     @IBOutlet weak var nameOfShowField: UITextField!
     @IBOutlet weak var eventLocationField: UITextField!
     @IBOutlet weak var PrioritySwitch: UISwitch!
     @IBOutlet weak var eventDate: UIDatePicker!
     @IBOutlet weak var installDate: UIDatePicker!
+    @IBOutlet weak var installDateField: UITextField!
+    @IBOutlet weak var showDateField: UITextField!
     
-    
+//    @IBAction func showDateButtonTapped(_ sender: Any) {
+//        tabBarController.
+//    }
+    //Button to end editing on date picker
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

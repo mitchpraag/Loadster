@@ -46,6 +46,8 @@ class CustomEventTableViewCell: UITableViewCell {
     
     
     
+    
+    
     func dateFormatter(date: NSDate) -> String {
         
         let formatter = DateFormatter()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventDetailTableViewController: UITableViewController, UITextFieldDelegate {
+class EventDetailTableViewController: UITableViewController, UITextFieldDelegate, ItemButtonCellDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +49,8 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! CustomItemTableViewCell
         
         let item = (event?.items)?[indexPath.row]
-        cell.items = item as? Item
-        
+        cell.item = item as? Item
+        cell.delegate = self
         
         return cell
     
@@ -70,9 +70,39 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-   
     
+    //Mark: - ItemCellDelegate
     
+    //Conform to the delegate by adding the three functions
     
-    
+    func loadButtonTapped(_ sender: CustomItemTableViewCell) {
+        guard let event = event,
+            let items = event.items,
+            let indexPath = tableView.indexPath(for: sender),
+            let item = items[indexPath.row] as? Item
+            else { return }
+        item.loaded = !item.loaded
+        EventController.SharedInstance.save()
+    }
+    func installedButtonTapped(_ sender: CustomItemTableViewCell) {
+        guard let event = event,
+            let items = event.items,
+            let indexPath = tableView.indexPath(for: sender),
+            let item = items[indexPath.row] as? Item
+            else { return }
+        item.installed = !item.installed
+        EventController.SharedInstance.save()
+    }
+    func returnedButtonTapped(_ sender: CustomItemTableViewCell) {
+        guard let event = event,
+            let items = event.items,
+            let indexPath = tableView.indexPath(for: sender),
+            let item = items[indexPath.row] as? Item
+            else { return }
+        item.returned = !item.returned
+        EventController.SharedInstance.save()
+    }
+        
+
+// BUILD AN ENUM THAT DOES WHAT THESE THREE FUNCTIONS DO ABOVE
 }
