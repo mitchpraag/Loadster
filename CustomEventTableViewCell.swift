@@ -38,21 +38,11 @@ class CustomEventTableViewCell: UITableViewCell {
         installDateLabel.text = "Install Date: \(dateFormatter(date: install))"
         locationLabel.text = "Location: \(location)"
         priorityLabel.isHidden = event.priority == false
-        
-        
-        
-        
     }
-    
-    
-    
-    
-    
+  
     func dateFormatter(date: NSDate) -> String {
-        
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter.string(from: date as Date)
-    }
-    
+    }    
 }

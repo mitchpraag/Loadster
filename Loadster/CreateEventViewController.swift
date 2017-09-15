@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateEventViewController: UIViewController, UITextFieldDelegate {
+class CreateEventViewController: UIViewController, UITextFieldDelegate, UIToolbarDelegate {
     
     var event: Event?
     
@@ -18,6 +18,9 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         eventLocationField.delegate = self
         showDateField.inputView = eventDate
         installDateField.inputView = installDate
+        showDateField.inputAccessoryView = doneButtonToolBar
+        installDateField.inputAccessoryView = doneButtonToolBar
+        
     }
     @IBOutlet weak var nameOfShowField: UITextField!
     @IBOutlet weak var eventLocationField: UITextField!
@@ -26,11 +29,22 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var installDate: UIDatePicker!
     @IBOutlet weak var installDateField: UITextField!
     @IBOutlet weak var showDateField: UITextField!
+    @IBOutlet var doneButtonToolBar: UIToolbar!
+
+    @IBAction func eventDatePickerChanged(_ sender: UIDatePicker) {
+        showDateField.text = dateFormatter(date: eventDate.date as NSDate)
+    }
+    @IBAction func installDatePickerChanged(_ sender: UIDatePicker) {
+        installDateField.text = dateFormatter(date: installDate.date as NSDate)
+    }
     
-//    @IBAction func showDateButtonTapped(_ sender: Any) {
-//        tabBarController.
-//    }
-    //Button to end editing on date picker
+    
+    @IBAction func doneEditingDateButtonTapped(_ sender: Any) {
+        installDateField.resignFirstResponder()
+        showDateField.resignFirstResponder()
+    }
+    
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -56,16 +70,15 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         self.event = event
         
         self.navigationController?.popViewController(animated: true)
-        
     }
-    
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+    func dateFormatter(date: NSDate) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter.string(from: date as Date)
+    }
+  
 }
