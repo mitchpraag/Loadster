@@ -22,6 +22,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UIToolba
         installDateField.inputAccessoryView = doneButtonToolBar
         
     }
+    
     @IBOutlet weak var nameOfShowField: UITextField!
     @IBOutlet weak var eventLocationField: UITextField!
     @IBOutlet weak var PrioritySwitch: UISwitch!
@@ -30,6 +31,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UIToolba
     @IBOutlet weak var installDateField: UITextField!
     @IBOutlet weak var showDateField: UITextField!
     @IBOutlet var doneButtonToolBar: UIToolbar!
+    
 
     @IBAction func eventDatePickerChanged(_ sender: UIDatePicker) {
         showDateField.text = dateFormatter(date: eventDate.date as NSDate)
@@ -43,15 +45,11 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UIToolba
         installDateField.resignFirstResponder()
         showDateField.resignFirstResponder()
     }
-    
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         textField.resignFirstResponder()
         return true
     }
-    
     @IBAction func prioritySwitchTapped(_ sender: Any) {
         
     }

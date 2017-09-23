@@ -39,11 +39,6 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
         self.item = item
         
         self.navigationController?.popViewController(animated: true)
-        
-        
-        
-        
-    
     }
     @IBAction func addItemAndNewButtonTapped(_ sender: Any) {
         
@@ -55,21 +50,11 @@ class CreateItemViewController: UIViewController, UITextFieldDelegate {
         
         itemNameField.text = ""
         quanityField.text = ""
-        
-        
-        
+    
     }
-    
-    
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-
 }
