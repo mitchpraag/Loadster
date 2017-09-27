@@ -19,6 +19,17 @@ class CustomEventTableViewCell: UITableViewCell {
     @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet  var cellBackgroundView: UITableViewCell!
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        cellBackgroundView.layer.cornerRadius = 10.0
+        cellBackgroundView.layer.shadowRadius = 4.0
+        cellBackgroundView.layer.shadowOpacity = 1.5
+        cellBackgroundView.layer.shadowColor = UIColor.black.cgColor
+        cellBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        
+    }
+    
     //Mark: - Properties 
     
     var event: Event? {
@@ -40,10 +51,7 @@ class CustomEventTableViewCell: UITableViewCell {
         installDateLabel.text = "Install Date: \(dateFormatter(date: install))"
         locationLabel.text = "Location: \(location)"
         priorityLabel.isHidden = event.priority == false
-        cellBackgroundView.backgroundColor = UIColor.darkGray
-        cellBackgroundView.layer.cornerRadius = 30
-        cellBackgroundView.layer.borderWidth = 4.0
-        cellBackgroundView.layer.borderColor = UIColor.white.cgColor
+
     }
   
     func dateFormatter(date: NSDate) -> String {

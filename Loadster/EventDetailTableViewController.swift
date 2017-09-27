@@ -13,7 +13,7 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = event?.nameOfEvent
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +46,6 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
         let item = (event?.items)?[indexPath.row]
         cell.item = item as? Item
         cell.delegate = self
-        
         return cell
     
     }

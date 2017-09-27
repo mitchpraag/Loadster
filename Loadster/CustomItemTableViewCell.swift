@@ -15,10 +15,21 @@ class CustomItemTableViewCell: UITableViewCell {
     @IBOutlet weak var LoadedButton: UIButton!
     @IBOutlet weak var InstalledButton: UIButton!
     @IBOutlet weak var returnedLabel: UIButton!
-
+    @IBOutlet weak var background: UIView!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        background.layer.cornerRadius = 10.0
+        background.layer.shadowRadius = 4.0
+        background.layer.shadowOpacity = 0.5
+        background.layer.shadowColor = UIColor.black.cgColor
+        background.layer.shadowOffset = CGSize(width: 0, height: 2)
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
         
         // Configure the view for the selected state
 
@@ -39,6 +50,7 @@ class CustomItemTableViewCell: UITableViewCell {
         
         nameLabel.text = nameOfItem
         quanityLabel.text = quanity
+        backgroundView?.backgroundColor = UIColor.darkGray
         
         updateFor(loaded: item.loaded)
         updateForInstall(installed: item.installed)

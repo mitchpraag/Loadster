@@ -20,6 +20,7 @@
 		AA6D71D31F58FAF300C34E33 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71D21F58FAF300C34E33 /* CreateEventViewController.swift */; };
 		AA6D71D51F58FC4B00C34E33 /* MainEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71D41F58FC4B00C34E33 /* MainEventTableViewController.swift */; };
 		AA6D71D91F59016400C34E33 /* CustomEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D71D81F59016400C34E33 /* CustomEventTableViewCell.swift */; };
+		AA77BDBB1F7B283F005C8163 /* EventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA77BDB91F7B283F005C8163 /* EventDetail.storyboard */; };
 		AAEDC4B31F5F899900E81F20 /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDC4B21F5F899900E81F20 /* CreateItemViewController.swift */; };
 		AAEDC4B51F5F961700E81F20 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDC4B41F5F961700E81F20 /* EventDetailTableViewController.swift */; };
 		AAEDC4BC1F62263D00E81F20 /* CustomItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDC4BB1F62263D00E81F20 /* CustomItemTableViewCell.swift */; };
@@ -62,6 +63,7 @@
 		AA6D71D21F58FAF300C34E33 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		AA6D71D41F58FC4B00C34E33 /* MainEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEventTableViewController.swift; sourceTree = "<group>"; };
 		AA6D71D81F59016400C34E33 /* CustomEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomEventTableViewCell.swift; path = ../CustomEventTableViewCell.swift; sourceTree = "<group>"; };
+		AA77BDBA1F7B283F005C8163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Loadster/Base.lproj/EventDetail.storyboard; sourceTree = "<group>"; };
 		AAEDC4B21F5F899900E81F20 /* CreateItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
 		AAEDC4B41F5F961700E81F20 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		AAEDC4BB1F62263D00E81F20 /* CustomItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				AA6D71971F58D90700C34E33 /* AppDelegate.swift */,
 				AA6D71D01F58EE1A00C34E33 /* EventController.swift */,
 				AA6D719B1F58D90700C34E33 /* Main.storyboard */,
+				AA77BDB91F7B283F005C8163 /* EventDetail.storyboard */,
 				AAEDC4B41F5F961700E81F20 /* EventDetailTableViewController.swift */,
 				AA6D71D41F58FC4B00C34E33 /* MainEventTableViewController.swift */,
 				AAEDC4BD1F62264B00E81F20 /* Custom Cells */,
@@ -288,6 +291,7 @@
 			files = (
 				AA6D71A51F58D90700C34E33 /* LaunchScreen.storyboard in Resources */,
 				AA6D71A21F58D90700C34E33 /* Assets.xcassets in Resources */,
+				AA77BDBB1F7B283F005C8163 /* EventDetail.storyboard in Resources */,
 				AA6D719D1F58D90700C34E33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +377,14 @@
 				AA6D71A41F58D90700C34E33 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AA77BDB91F7B283F005C8163 /* EventDetail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA77BDBA1F7B283F005C8163 /* Base */,
+			);
+			name = EventDetail.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

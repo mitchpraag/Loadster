@@ -25,6 +25,8 @@ class MainEventTableViewController: UITableViewController, UITextFieldDelegate {
 
         let event = EventController.SharedInstance.events[indexPath.row]
         cell.event = event
+        cell.layer.cornerRadius = 20
+        cell.layer.masksToBounds = true
         return cell
     }
     
@@ -45,12 +47,8 @@ class MainEventTableViewController: UITableViewController, UITextFieldDelegate {
                 
                 let event = EventController.SharedInstance.events[selectedIndex]
                 eventDetailViewController.event = event
-                
-                
             }
-            
         }
-        
     }
 }
 
