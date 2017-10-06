@@ -25,7 +25,41 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             print("NO ITEMS")
         }
     }
-    
+//    @IBOutlet weak var TabBar: UISegmentedControl!
+//    @IBAction func TabBarValueChanged(_ sender: AnyObject) {
+//        switch TabBar.selectedSegmentIndex
+//        {
+//        case 0:
+//            var array: [Item] = []
+//            guard let event = event,
+//            let items = event.items else { return }
+//            for item in items {
+//                if let newItem = item as? Item {
+//                    if newItem.loaded {
+//                        array.append(newItem)
+//                    }
+//                }
+//            }
+//            let loadedItemsArray = array.filter({$0.loaded})
+//            self.selectedItems = loadedItemsArray
+//            tableView.reloadData()
+//            print(loadedItemsArray)
+//        case 1:
+//            //code for organizing
+//            print(1)
+//        case 2:
+//            //Code for organzinig
+//            print(2)
+//        default:
+//            print("Hi")
+//
+//
+//    }
+//
+//
+//    }
+//
+//    var selectedItems: [Item]?
     
     var event: Event?
 
@@ -33,7 +67,6 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         let numberOfItems = event?.items?.count ?? 0
         print("Number of items: \(event?.items?.count ?? 0)")
         return numberOfItems
@@ -64,6 +97,12 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    
+    
+    
+    
+    
     
     //Mark: - ItemCellDelegate
     

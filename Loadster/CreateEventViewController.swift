@@ -60,7 +60,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UIToolba
         let eventInstall = installDate.date
         let priority = PrioritySwitch.isOn
 
-        
         guard let nameOfshow: String = nameOfShowField.text, let eventLocation = eventLocationField.text else { return }
         
         let event = EventController.SharedInstance.createEvent(nameOfEvent: nameOfshow, location: eventLocation, installDate: eventInstall, dateOfEvent: eventTime, priority: priority)

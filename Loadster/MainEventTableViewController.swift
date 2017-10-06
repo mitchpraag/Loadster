@@ -22,7 +22,6 @@ class MainEventTableViewController: UITableViewController, UITextFieldDelegate {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! CustomEventTableViewCell
-
         let event = EventController.SharedInstance.events[indexPath.row]
         cell.event = event
         cell.layer.cornerRadius = 20
